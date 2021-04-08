@@ -1,0 +1,23 @@
+.site__footer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3rem;
+    background-color: rebeccapurple;
+    padding: 2rem;
+    text-align: center;
+    color: white;
+  }
+  
+  .site__footer a {
+    color: white;
+  }
+
+  .site__footer figure {
+    background-color: white;
+    border-radius: 50%;
+  }
+
+  .site__footer .site__info {
+    background: indigo;
+  }
+
