@@ -7,8 +7,6 @@
  import UniversalLink from "../utils/UniversalLink"
  import { FlatListToHierarchical } from "../utils/FlatListToHierarchical"
  
- import * as style from "./footerNav.module.css"
- 
  const MenuLoop = ({ menuItems }) => {
    return (
      <ul>
@@ -36,9 +34,7 @@
      {
        allWpMenuItem(
          sort: { fields: order, order: ASC }
-         filter: { menu: { node: { slug: { eq: "footer-menu" } } } 
-         parentDatabaseId: { eq: 0 }
-        }
+         filter: { menu: { node: { slug: { eq: "footer-menu" } } } }
        ) {
          nodes {
            id
@@ -50,15 +46,15 @@
        }
      }
    `)
- 
+
    const footerMenu = FlatListToHierarchical(wpMenu.allWpMenuItem.nodes, {
      idKey: "id",
      childrenKey: "routes",
      parentKey: "parent",
    })
- 
+
    return (
-     <nav className={style.footernav}>
+     <nav style={{ textAlign: "left" }}>
        {footerMenu.length > 0 && <MenuLoop menuItems={footerMenu}></MenuLoop>}
      </nav>
    )

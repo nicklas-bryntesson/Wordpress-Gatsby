@@ -3,7 +3,7 @@
  * @link https://www.wpgraphql.com/docs/menus/#hierarchical-data
  */
  import React from "react"
- import { useStaticQuery, graphql } from "gatsby"
+ import { useStaticQuery, graphql, Link } from "gatsby"
  import UniversalLink from "../utils/UniversalLink"
  import { FlatListToHierarchical } from "../utils/FlatListToHierarchical"
  
@@ -27,6 +27,9 @@
            </li>
          )
        })}
+       <li>
+        <Link to="/posts/">Posts</Link>
+       </li>
      </ul>
    )
  }
