@@ -11,12 +11,13 @@ import Pagination from "../components/pagination"
 
 
 const ArticleIndex = ({ data, pageContext }) => {
-  const posts = data.allWpPost.nodes
+    const { catName } = pageContext
+    const posts = data.allWpPost.nodes
   return (
     <Layout>
-      <Seo title="Articles" />
+      <Seo title={`Category: ${catName}`} />
       <section className={style.articlelist}>
-        <h1>Posts</h1>
+        <h1>Category: {catName}</h1>
         {posts.map((post, index) => (
           <article key={index} className={style.listitem}>
             {post.featuredImage && (
@@ -36,7 +37,7 @@ const ArticleIndex = ({ data, pageContext }) => {
               <Link to={`/posts${post.uri}`}>{post.title}</Link>
             </h2>
             <div className={style.article__meta}>
-              <strong>By: </strong> {post.author.node.name}. <strong>Published:</strong>{" "}
+              by {post.author.node.name}. Published{" "}
               {new Date(post.date).toLocaleDateString("en-US", {
                 month: "long",
                 day: "numeric",
@@ -48,7 +49,7 @@ const ArticleIndex = ({ data, pageContext }) => {
               dangerouslySetInnerHTML={{ __html: post.excerpt }}
             />
             <div className={style.article__tax}>
-              <strong>Tagged:</strong>{" "}
+              Tagged:{" "}
               {post.tags.nodes.map((tag, index) => [
                 index > 0 && ", ",
                 <Link key={index} to={tag.link}>
@@ -67,8 +68,15 @@ const ArticleIndex = ({ data, pageContext }) => {
 export default ArticleIndex
 
 export const pageQuery = graphql`
-  query($skip: Int!, $limit: Int!) {
-    allWpPost(sort: { fields: date }, skip: $skip, limit: $limit) {
+query($catId: Int!, $skip: Int!, $limit: Int!) {
+    allWpPost(
+      sort: { fields: date }
+      skip: $skip
+      limit: $limit
+      filter: {
+        categories: { nodes: { elemMatch: { databaseId: { eq: $catId } } } }
+      }
+    ) {
       nodes {
         date
         databaseId
@@ -79,12 +87,6 @@ export const pageQuery = graphql`
         author {
           node {
             name
-            avatar {
-              foundAvatar
-              width
-              url
-              height
-            }
           }
         }
         categories {

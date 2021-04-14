@@ -6,10 +6,10 @@
 .article {
   margin: 0 auto;
   padding: 0 2rem;
+  max-width: 960px;
 }
 
 .featimg {
-  margin-top: 3rem;
   margin-left: -2rem;
   margin-right: -2rem;
 }

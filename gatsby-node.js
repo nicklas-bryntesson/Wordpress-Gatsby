@@ -37,6 +37,30 @@
            }
          }
        }
+       catQuery: allWpCategory {
+         nodes {
+           databaseId
+           uri
+           name
+           posts {
+             nodes {
+               id
+             }
+           }
+         }
+       }
+       tagQuery: allWpTag {
+         nodes {
+           databaseId
+           uri
+           name
+           posts {
+             nodes {
+               id
+             }
+           }
+         }
+       }
      }
    `)
    if (queryResult.errors) {
@@ -82,22 +106,37 @@
      pathPrefix: "/posts", // Creates pages like `/blog`, `/blog/2`, etc
      component: path.resolve(`./src/templates/posts.js`), // Just like `createPage()`
    })
-
-   
-  // Create your paginated category indexes
-  const categories = queryResult.data.catQuery.nodes
-  categories.map(category => {
-    paginate({
-      createPage, // The Gatsby `createPage` function
-      items: category.posts.nodes, // An array of objects
-      itemsPerPage: 4, // How many items you want per page
-      pathPrefix: category.uri, // Creates pages like `/blog`, `/blog/2`, etc
-      component: path.resolve(`./src/templates/categories.js`), // Just like `createPage()`
-      context: {
-        catId: category.databaseId,
-        catName: category.name,
-      },
-    })
-  })
-}
+ 
+   // Create your paginated category indexes
+   const categories = queryResult.data.catQuery.nodes
+   categories.map(category => {
+     paginate({
+       createPage, // The Gatsby `createPage` function
+       items: category.posts.nodes, // An array of objects
+       itemsPerPage: 4, // How many items you want per page
+       pathPrefix: category.uri, // Creates pages like `/blog`, `/blog/2`, etc
+       component: path.resolve(`./src/templates/categories.js`), // Just like `createPage()`
+       context: {
+         catId: category.databaseId,
+         catName: category.name,
+       },
+     })
+   })
+ 
+   // Create your paginated tag indexes
+   const tags = queryResult.data.tagQuery.nodes
+   tags.map(tag => {
+     paginate({
+       createPage, // The Gatsby `createPage` function
+       items: tag.posts.nodes, // An array of objects
+       itemsPerPage: 4, // How many items you want per page
+       pathPrefix: tag.uri, // Creates pages like `/blog`, `/blog/2`, etc
+       component: path.resolve(`./src/templates/tags.js`), // Just like `createPage()`
+       context: {
+         tagId: tag.databaseId,
+         tagName: tag.name,
+       },
+     })
+   })
+ }
  

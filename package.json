@@ -3,7 +3,7 @@
   "private": true,
   "description": "A Wordpress,, graphQL, React and Gatsby site",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Nicklas Bryntesson",
   "dependencies": {
     "gatsby": "^3.2.1",
     "gatsby-awesome-pagination": "^0.3.8",
@@ -12,6 +12,7 @@
     "gatsby-plugin-manifest": "^3.2.0",
     "gatsby-plugin-offline": "^4.2.0",
     "gatsby-plugin-react-helmet": "^4.2.0",
+    "gatsby-plugin-react-svg": "^3.0.1",
     "gatsby-plugin-sharp": "^3.2.0",
     "gatsby-source-filesystem": "^3.2.0",
     "gatsby-source-wordpress": "^5.2.1",

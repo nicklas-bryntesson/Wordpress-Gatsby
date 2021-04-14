@@ -4,10 +4,11 @@
  */
  import React from "react"
  import { useStaticQuery, graphql, Link } from "gatsby"
+
+ import * as style from "./mainNav.module.css"
+
  import UniversalLink from "../utils/UniversalLink"
  import { FlatListToHierarchical } from "../utils/FlatListToHierarchical"
- 
- import * as style from "./mainNav.module.css"
  
  const MenuLoop = ({ menuItems }) => {
    return (
@@ -57,7 +58,6 @@
      childrenKey: "routes",
      parentKey: "parent",
    })
-   console.log("headerMenu: ", headerMenu)
  
    return (
      <nav className={style.mainnav}>
