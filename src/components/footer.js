@@ -1,6 +1,7 @@
 import React from "react"
 import FooterNav from "./footerNav"
-import { StaticImage } from "gatsby-plugin-image"
+
+import SiteLogo from "./logo.svg";
 
 import * as style from "./footer.module.css"
 
@@ -11,14 +12,13 @@ const Footer = () => {
         <FooterNav />
         <div classList={style.logo__wrapper}>
           <figure className={style.logo}>
-            <StaticImage
-                src="../images/gatsby-wapuus.png"
-                width={125}
-                height={125}
-                quality={95}
-                formats={["AUTO", "WEBP", "AVIF"]}
-                alt="The Gatsby Mascot"
-              />
+
+            <img 
+              src={SiteLogo} 
+              alt="Site logo - Icon of Wapuu the wordpress mascot, hugging a Gatsby JS logo" 
+            />
+
+
           </figure>
         </div>
       </div>

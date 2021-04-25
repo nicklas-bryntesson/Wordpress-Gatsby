@@ -1,33 +1,47 @@
 import * as React from "react"
-import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
+import GatsbyLogo from "../assets/icons-components/Gatsby-512x512.svg"
+import WordpressLogo from "../assets/icons-components/Wordpress-512x512.svg"
+import GraphQlLogo from "../assets/icons-components/GraphQL-512x512.svg"
+import ReactLogo from "../assets/icons-components/React-512x575.svg"
+
 import * as style from "../templates/single.module.css"
+import * as indexStyle from "./index.module.css"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import LinkPosts from "../components/LinkPosts"
 
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
-    <div
-        style={{ 
-          position: `relative`,
-          marginBottom: `1.75rem`,
-          backgroundColor: `#FFDE00`,
-          padding: `3rem`
-        }} 
-      >
-      <div
-        style={{ 
-          overflow: 'hidden',
-          position: 'absolute',
-          height: '74px',
-          bottom: '0',
-          left: '0',
-          right: '0'
-        }} 
-      >
+
+    <div className={indexStyle.hero__header}>
+      <div className={indexStyle.hero__wrapper}>
+        <img 
+          src={GatsbyLogo} 
+          alt="GatsbyJS - Logo" 
+          className={indexStyle.hero__logo}
+        />
+        <img 
+          src={GraphQlLogo} 
+          alt="GraphQL - Logo"
+          className={indexStyle.hero__logo}
+        />
+        <img 
+          src={ReactLogo} 
+          alt="React - Logo" 
+          className={indexStyle.hero__logo}
+        />
+        <img 
+          src={WordpressLogo} 
+          alt="Wordpress - Logo" 
+          className={indexStyle.hero__logo}
+        />
+      </div>
+ 
+      <div className={indexStyle.hero__wave}>
         <svg
           preserveAspectRatio="none"
           viewBox="0 0 1200 120"
@@ -36,7 +50,8 @@ const IndexPage = () => (
         >
           <path d="M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V0H0v27.35a600.21 600.21 0 00321.39 29.09z" />
         </svg>
-      </div>      
+      </div>
+
     </div>
 
     <article className={style.article}>
@@ -58,11 +73,10 @@ const IndexPage = () => (
       alt="A Gatsby astronaut"
       style={{ marginBottom: `1.45rem` }}
     />
-    <p>
-      <Link to="/posts/">Alla Poster</Link>
-    </p>
+
+    <LinkPosts />
+
     </article>
-    
   </Layout>
 )
 

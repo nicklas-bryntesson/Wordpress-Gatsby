@@ -1,0 +1,28 @@
+.hero__header {
+    position: relative;
+    margin-bottom: 1.75rem;
+    background: #FFDE00;
+    padding: 3rem;
+}
+
+.hero__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 3rem; 
+}
+
+.hero__logo {
+    margin: 1.25rem;
+    max-width: 8rem;
+}
+
+.hero__wave {
+    overflow: hidden;
+    position: absolute;
+    height: 74px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

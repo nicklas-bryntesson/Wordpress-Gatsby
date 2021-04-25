@@ -2,34 +2,33 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
+import * as style from "./header.module.css"
+
+import SiteLogo from "./logo.svg";
+
 import MainNav from "./mainNav"
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
+  <header className={style.header}>
+    <div className={style.header__wrapper}>
+      
+  
+      <div className={style.header__logo}>
+        <Link to="/">
+          <img 
+            src={SiteLogo} 
+            alt="Site logo - Icon of Wapuu the wordpress mascot, hugging a Gatsby JS logo" />
         </Link>
+      </div>
+
+      <h1 className={style.header__title}>
+        <Link to="/" >{siteTitle}</Link>
       </h1>
+
+      <MainNav />
+
     </div>
-    <MainNav />
+
   </header>
 )
 

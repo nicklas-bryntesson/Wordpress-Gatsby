@@ -1,3 +1,7 @@
 .article__catlist {
     text-align: center;
-  }
+}
+
+.article__catlist a:hover {
+  color: rebeccapurple;
+}

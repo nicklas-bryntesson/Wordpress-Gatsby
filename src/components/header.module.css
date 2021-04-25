@@ -1,0 +1,39 @@
+.header {
+    background: rebeccapurple;
+}
+
+
+.header__wrapper {
+    margin: 0 auto;
+    max-width: 80ch;
+    padding: 1.45rem 1.0875rem;
+    display: grid;
+    grid-template-areas: "logo title"
+                        "logo menu";
+    gap: 1rem;
+}
+
+.header__logo {
+    grid-area: logo;
+    display: grid;
+	place-items: center;
+    max-width: 5.65rem;
+}
+
+.header__logo img {
+    display: grid;
+	place-items: center;
+    margin-bottom: 0;
+}
+
+.header__title {
+    margin: 0;
+    margin-right: 1rem;
+    text-align: right;
+    grid-area: title;
+}
+
+.header__title a {
+    color: white;
+    text-decoration: none;
+}

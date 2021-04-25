@@ -6,7 +6,8 @@
 .article {
   margin: 0 auto;
   padding: 0 2rem;
-  max-width: 960px;
+  max-width: 80ch;
+  background-color: khaki;
 }
 
 .featimg {
@@ -43,12 +44,14 @@
 .articlelist {
   margin: 0 auto;
   padding: 0 2rem;
+  background-color: gold;
 }
 
 .articlelist h2 {
   margin-top: 2rem;
   font-size: 4rem;
   text-align: center;
+  background-color: greenyellow;
 }
 
 .articlelist ul {
@@ -62,10 +65,14 @@ a {
 
 .listitem {
   margin: 3rem 0;
+  background-color: ghostwhite;
 }
 
 .listitem .article__content {
   margin-top: 1rem;
+  max-width: 65ch;
+  margin: 0 auto;
+  background-color: gainsboro;
 }
 
 .listitem::after {
@@ -78,4 +85,5 @@ a {
 
 .author__meta {
   margin-bottom: 1.25rem;
+  background-color: indianred;
 }

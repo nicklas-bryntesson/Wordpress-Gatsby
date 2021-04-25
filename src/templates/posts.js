@@ -7,6 +7,7 @@ import * as style from "./single.module.css"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Catlist from "../components/catlist"
+import Taglist from "../components/taglist"
 import Pagination from "../components/pagination"
 
 
@@ -47,15 +48,8 @@ const ArticleIndex = ({ data, pageContext }) => {
               className={style.article__content}
               dangerouslySetInnerHTML={{ __html: post.excerpt }}
             />
-            <div className={style.article__tax}>
-              <strong>Tagged:</strong>{" "}
-              {post.tags.nodes.map((tag, index) => [
-                index > 0 && ", ",
-                <Link key={index} to={tag.link}>
-                  {tag.name}
-                </Link>,
-              ])}
-            </div>
+            <Taglist postObject={post} />
+
           </article>
         ))}
       </section>
