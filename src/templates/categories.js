@@ -7,6 +7,7 @@ import * as style from "./single.module.css"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Catlist from "../components/catlist"
+import Taglist from "../components/taglist"
 import Pagination from "../components/pagination"
 
 
@@ -17,7 +18,7 @@ const ArticleIndex = ({ data, pageContext }) => {
     <Layout>
       <Seo title={`Category: ${catName}`} />
       <section className={style.articlelist}>
-        <h1>Category: {catName}</h1>
+      <h1 className={style.list__title}>Category: {catName}</h1>
         {posts.map((post, index) => (
           <article key={index} className={style.listitem}>
             {post.featuredImage && (
@@ -37,7 +38,7 @@ const ArticleIndex = ({ data, pageContext }) => {
               <Link to={`/posts${post.uri}`}>{post.title}</Link>
             </h2>
             <div className={style.article__meta}>
-              by {post.author.node.name}. Published{" "}
+              <strong>By: </strong> {post.author.node.name}. <strong>Published:</strong>{" "}
               {new Date(post.date).toLocaleDateString("en-US", {
                 month: "long",
                 day: "numeric",
@@ -48,15 +49,7 @@ const ArticleIndex = ({ data, pageContext }) => {
               className={style.article__content}
               dangerouslySetInnerHTML={{ __html: post.excerpt }}
             />
-            <div className={style.article__tax}>
-              Tagged:{" "}
-              {post.tags.nodes.map((tag, index) => [
-                index > 0 && ", ",
-                <Link key={index} to={tag.link}>
-                  {tag.name}
-                </Link>,
-              ])}
-            </div>
+            <Taglist postObject={post} />
           </article>
         ))}
       </section>

@@ -1,7 +1,9 @@
 .article__catlist {
     text-align: center;
+    max-width: var(--text-wrapper);
+    margin: 0 auto;
 }
 
 .article__catlist a:hover {
-  color: rebeccapurple;
+  color: var(--theme-color);
 }

@@ -17,7 +17,7 @@ const ArticleIndex = ({ data, pageContext }) => {
     <Layout>
       <Seo title="Articles" />
       <section className={style.articlelist}>
-        <h1>Posts</h1>
+        <h1 className={style.list__title}>Posts</h1>
         {posts.map((post, index) => (
           <article key={index} className={style.listitem}>
             {post.featuredImage && (

@@ -1,4 +1,9 @@
-.article__tax a {
-    color: plum;
+.article__tax {
+    max-width: var(--text-wrapper);
+    margin: 0 auto;
+}
+
+.article__tax a:hover {
+    color: var(--article-links);
 }
 

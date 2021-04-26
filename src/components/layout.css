@@ -1,3 +1,16 @@
+:root {
+  --article-links: rgb(52, 88, 248);
+  --text-main: hsla(0, 0%, 0%, 0.8);
+  
+  --light-grey-4: hsla(0, 0%, 0%, 0.04);
+
+  --theme-color: rebeccapurple;
+  --theme-color-dark: indigo;
+  
+  --text-wrapper: 65ch;
+  --layout-wrapper: 80ch;
+}
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -9,7 +22,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: hsla(0, 0%, 0%, 0.8);
+  color: var(--text-main);
   font-family: georgia, serif;
   font-weight: normal;
   word-wrap: break-word;

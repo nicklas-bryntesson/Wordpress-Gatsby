@@ -4,6 +4,7 @@
   width: 100%;
   font-family: Arial, Helvetica, sans-serif;
   grid-area: menu;
+  background-color: var(--theme-color);
 }
 
 .mainnav ul {

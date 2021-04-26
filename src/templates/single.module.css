@@ -4,15 +4,20 @@
 }
 
 .article {
-  margin: 0 auto;
-  padding: 0 2rem;
-  max-width: 80ch;
-  background-color: khaki;
+  margin: 1.65rem auto;
+  padding: 0 1.65rem;
+  max-width: var(--text-wrapper);
+}
+
+.article a {
+  color: blue;
+  /* Add blue underline to the after element instead */
 }
 
 .featimg {
-  margin-left: -2rem;
-  margin-right: -2rem;
+  margin-top: 1.65rem;
+  margin-left: -1.65rem;
+  margin-right: -1.65rem;
 }
 
 .article__title {
@@ -41,17 +46,31 @@
   margin: 3rem auto;
 }
 
+
+.article figcaption {
+  font-size: 80%;
+}
+
+/* Posts */
+
 .articlelist {
   margin: 0 auto;
-  padding: 0 2rem;
-  background-color: gold;
+  padding: 0 1.65rem;
 }
+
+.list__title {
+  background-color: var(--light-grey-4);
+  margin-left: -1.65rem;
+  margin-right: -1.65rem;
+  padding: 1rem 1.65rem;
+}
+
+
 
 .articlelist h2 {
   margin-top: 2rem;
   font-size: 4rem;
   text-align: center;
-  background-color: greenyellow;
 }
 
 .articlelist ul {
@@ -65,14 +84,12 @@ a {
 
 .listitem {
   margin: 3rem 0;
-  background-color: ghostwhite;
 }
 
 .listitem .article__content {
   margin-top: 1rem;
-  max-width: 65ch;
+  max-width: var(--text-wrapper);
   margin: 0 auto;
-  background-color: gainsboro;
 }
 
 .listitem::after {
@@ -85,5 +102,4 @@ a {
 
 .author__meta {
   margin-bottom: 1.25rem;
-  background-color: indianred;
 }

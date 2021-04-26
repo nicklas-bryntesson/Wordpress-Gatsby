@@ -22,7 +22,7 @@ const Content = ({ data }) => {
         )}
         <h1>{page.title}</h1>
         <div className={style.author__meta}>
-            <strong>By:</strong> {page.author.node.name}. 
+            <strong>By:</strong> {page.author.node.name}. {" "}
             <strong>Published on:</strong> {" "}
             {new Date(page.date).toLocaleDateString("en-US", {
                 month: "long",

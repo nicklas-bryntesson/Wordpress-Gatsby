@@ -3,6 +3,7 @@
     padding: 1rem;
     text-decoration: none;
     display: inline-block;
+    background-color: aqua;
 }
 
 .postnav a:first-of-type {

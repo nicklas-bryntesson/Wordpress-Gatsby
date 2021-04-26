@@ -26,7 +26,8 @@ const postView = ({ data }) => {
         <Catlist postObject={post} />
         <h1 className={style.article__title}>{post.title}</h1>
         <div className={style.article__meta}>
-          <strong>By:</strong>{" "} {post.author.node.name}. <strong>Published:</strong> {" "}
+          <strong>By:</strong>{" "} {post.author.node.name}. {" "}
+          <strong>Published:</strong> {" "}
           {new Date(post.date).toLocaleDateString("en-US", {
             month: "long",
             day: "numeric",
