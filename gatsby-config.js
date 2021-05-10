@@ -8,7 +8,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        url: `http://headless-gatsbyjs.local/graphql`,
+        url: `https://headless.nicklasbryntesson.se/graphql`,
         develop: {
           hardCacheMediaFiles: true,
         },
